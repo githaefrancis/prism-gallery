@@ -8,6 +8,8 @@ class Location(models.Model):
   location_description=models.CharField(max_length=500)
   created_at=models.DateTimeField(auto_now_add=True)
 
+  def __str__(self):
+    return self.location_name
 
   def save_location(self):
     """

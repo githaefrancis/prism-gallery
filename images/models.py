@@ -13,5 +13,8 @@ class Image(models.Model):
   location=models.ForeignKey(Location,on_delete=models.CASCADE)
   created_at=models.DateTimeField(auto_now_add=True)
 
+  def __str__(self):
+    return self.image_name
+
   def save_image(self):
     self.save()
