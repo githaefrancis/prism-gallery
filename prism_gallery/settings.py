@@ -80,17 +80,17 @@ WSGI_APPLICATION = 'prism_gallery.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
+db_name=os.environ.get("DB_NAME")
+db_user=os.environ.get("DB_USER")
+db_password=os.environ.get("PASSWORD")
 
+DATABASES = {
+    
     'default':{
         'ENGINE':'django.db.backends.postgresql',
-        'NAME':os.environ.get("NAME"),
-         'USER':os.environ.get("USER"),
-         'PASSWORD':os.environ.get("PASSWORD"),
+        'NAME':db_name,
+         'USER':db_user,
+         'PASSWORD':db_password,
     }
 }
 
