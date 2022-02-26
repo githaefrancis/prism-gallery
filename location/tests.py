@@ -7,7 +7,7 @@ from .models import Location
 class LocationTestClass(TestCase):
 
   def setUp(self):
-    self.nairobi=Location(location_name='Nairobi',location_slug='nairobi_city')
+    self.nairobi=Location(location_name='Nairobi',location_slug='nairobi_city',location_description='Capital City of Kenya')
 
   def test_instance(self):
     self.assertTrue(isinstance(self.nairobi,Location))
