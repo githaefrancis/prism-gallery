@@ -1,0 +1,58 @@
+nav{
+  background-color:#FFCD30;
+  font-weight: bold;
+  font-size: 1.4em;
+
+}
+
+header{
+  height:100vh;
+}
+.main-row{
+  height: 100vh;
+  max-height:100vh;
+
+}
+.banner-section{
+  background-image: url('/static/asset-images/hero.jpg');
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.highlight{
+  margin-top: 25%;
+}
+
+
+
+.preview-photo-1{
+
+  background-image: url('/static/asset-images/soccer.jpg');
+  height: 45vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.preview-photo-2{
+  background-image: url('/static/asset-images/stage.jpg');
+  height: 45vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.preview-photo-3{
+  background-image: url('/static/asset-images/jeep.jpg');
+  height: 45vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.preview-photo-4{
+  background-image: url('/static/asset-images/foresthikers.jpg');
+  height: 45vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
