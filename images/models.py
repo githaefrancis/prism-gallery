@@ -49,3 +49,12 @@ class Image(models.Model):
     '''
     target_location=Location.objects.filter(location_name__contains=location).first()
     return Image.objects.filter(location=target_location).all()
+
+  def update_image(self,**kwargs):
+    '''
+    Method to update image object details
+    '''
+    for key,value in kwargs.items():
+      setattr(self,key,value)
+    self.save()
+    return

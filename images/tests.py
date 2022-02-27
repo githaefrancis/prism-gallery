@@ -10,8 +10,8 @@ class ImageTestClass(TestCase):
 
     self.cat_img=Image(image_name='KICC',image_description='A picture of KICC building',category=self.buildings,location=self.nairobi)
 
-  def tearDown(self):
-    Image.objects.all().delete()
+  # def tearDown(self):
+  #   Image.objects.all().delete()
 
   def test_instance(self):
     self.assertTrue(self.cat_img,Image)
@@ -59,3 +59,13 @@ class ImageTestClass(TestCase):
     self.filter_results=Image.filter_by_location('Nairobi')
 
     self.assertTrue(len(self.filter_results)>0)
+
+  def test_update_image(self):
+    self.buildings.save_category()
+    self.nairobi.save_location()
+    self.cat_img.save_image()
+
+    self.target_image=Image.get_image_by_id(self.cat_img.id)
+    self.cat_img.update_image(image_name='KICC TOWER')
+
+    self.assertEquals(Image.get_image_by_id(self.cat_img.id).image_name,'KICC TOWER')
