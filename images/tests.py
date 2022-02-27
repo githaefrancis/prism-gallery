@@ -10,6 +10,9 @@ class ImageTestClass(TestCase):
 
     self.cat_img=Image(image_name='KICC',image_description='A picture of KICC building',category=self.buildings,location=self.nairobi)
 
+  def tearDown(self):
+    Image.objects.all().delete()
+
   def test_instance(self):
     self.assertTrue(self.cat_img,Image)
 
@@ -21,3 +24,38 @@ class ImageTestClass(TestCase):
     self.assertTrue(len(Image.objects.all())>0)
 
 
+  def test_delete_image(self):
+    self.buildings.save_category()
+    self.nairobi.save_location()
+    self.cat_img.save_image()
+    self.cat_img.delete_image()
+
+    self.assertTrue(len(Image.objects.all())==0)
+
+
+  def test_get_image_by_id(self):
+    self.buildings.save_category()
+    self.nairobi.save_location()
+    self.cat_img.save_image()
+    print(self.cat_img.id)
+    self.image_result=Image.get_image_by_id(self.cat_img.id)
+    self.assertEquals(self.image_result.id,self.cat_img.id)
+
+  def test_search_image(self):
+    self.buildings.save_category()
+    self.nairobi.save_location()
+    self.cat_img.save_image()
+
+    self.search_results=Image.search_image('Buildings')
+    print(self.search_results)
+    self.assertTrue(len(self.search_results)>0)
+
+
+  def test_filter_by_location(self):
+    self.buildings.save_category()
+    self.nairobi.save_location()
+    self.cat_img.save_image()
+
+    self.filter_results=Image.filter_by_location('Nairobi')
+
+    self.assertTrue(len(self.filter_results)>0)

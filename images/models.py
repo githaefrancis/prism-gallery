@@ -1,4 +1,5 @@
 from distutils.command.upload import upload
+from unicodedata import category
 from django.db import models
 from category.models import Category
 
@@ -18,3 +19,33 @@ class Image(models.Model):
 
   def save_image(self):
     self.save()
+
+  def delete_image(self):
+    '''
+    method to delete an image from the database
+    '''
+    self.delete()
+
+  @classmethod
+  def get_image_by_id(cls,id):
+    '''
+    method that fetches and image by id
+    '''
+    return Image.objects.filter(id=id).first()
+
+
+  @classmethod
+  def search_image(cls,category):
+    '''
+    method that searches for images per category
+    '''
+    target_category=Category.objects.filter(category_name__contains=category).first()
+    return Image.objects.filter(category=target_category).all()
+
+  @classmethod
+  def filter_by_location(cls,location):
+    '''
+    method that fetches images based on location
+    '''
+    target_location=Location.objects.filter(location_name__contains=location).first()
+    return Image.objects.filter(location=target_location).all()
