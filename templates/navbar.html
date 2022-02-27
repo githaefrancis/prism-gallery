@@ -61,10 +61,11 @@
         {% comment %} location dropdown {% endcomment %}
 
       </ul>
-      <form class="d-flex">
+      <form class="d-flex" role="search" action="{% url 'search' %}">
         <input
           class="form-control me-2"
           type="search"
+          name="category_name"
           placeholder="Search"
           aria-label="Search"
         />

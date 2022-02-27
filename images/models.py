@@ -45,7 +45,9 @@ class Image(models.Model):
     '''
     method that searches for images per category
     '''
+    print(category)
     target_category=Category.objects.filter(category_name__contains=category).first()
+    print(target_category)
     return Image.objects.filter(category=target_category).all()
 
   @classmethod
