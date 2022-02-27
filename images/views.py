@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import Image
 # Create your views here.
 
 def index(request):
@@ -7,4 +7,9 @@ def index(request):
 
 
 def gallery(request):
-  return render(request,'gallery.html')
+  images=Image.get_all_images()
+  context={
+    'images':images,
+  }
+  print(images)
+  return render(request,'gallery.html',context)

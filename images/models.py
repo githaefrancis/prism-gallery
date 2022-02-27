@@ -33,6 +33,12 @@ class Image(models.Model):
     '''
     return Image.objects.filter(id=id).first()
 
+  @classmethod
+  def get_all_images(cls):
+    '''
+    method to fetch all images
+    '''
+    return Image.objects.all()
 
   @classmethod
   def search_image(cls,category):

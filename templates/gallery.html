@@ -1,8 +1,28 @@
 {% extends 'base.html' %}
 {% include 'navbar.html' %}
+{% load static %}
 
 {% block content %}
+<div class="container">
 
-Search results
+
+<h3 class="text-center"> Search results - {{ images.count }}</h3>
+<!-- data-masonry='{"percentPosition": true } -->
+<div class="row ">
+  {% for image in images %}
+  <div class="col-3 mb-3 gallery-item">
+    <!-- <div class="overlay"> <button class="view-image btn" data-bs-toggle="modal" data-bs-target="#image-{{image.id}}"> View</button> </div> -->
+  <img src="{{ image.image.url }}" alt="" class="img-fluid">
+  <div class="d-flex justify-content-center mt-2"><button class="view-image btn" data-bs-toggle="modal" data-bs-target="#image-{{image.id}}"> View</button></div>
+</div>
+{% include 'modal.html' %}
+
+{% endfor %}
+
+</div>
+
+
+
+</div>
 
 {% endblock %}

@@ -1,3 +1,5 @@
+
+
 nav{
   background-color:#FFCD30;
   font-weight: bold;
@@ -56,3 +58,30 @@ header{
   background-position: center;
   background-repeat: no-repeat;
 }
+
+
+
+.overlay{
+ 
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  opacity: -1;
+
+
+}
+.view-image{
+  background-color:#FFCD30
+}
+
+.gallery-item:hover .overlay{
+opacity: 1;
+
+}
+
+/* .gallery-item:hover .gallery-item{
+  opacity: 0.1;
+} */
+
+
