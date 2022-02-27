@@ -18,3 +18,10 @@ class Location(models.Model):
         self: a new instance of the location model
     """
     self.save()
+  @classmethod
+  def get_all_locations(self):
+    """
+    Method that fetches all locations
+    """
+
+    return Location.objects.all()
