@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'images',
     'category',
     'location',
+    'django_bootstrap5'
 ]
 
 MIDDLEWARE = [
