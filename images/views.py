@@ -35,6 +35,7 @@ def search(request):
       "message":message,
       "images":search_results,
       "location_list":locations_list,
+      "location":search_results[0].location
 
     }
     print(search_results)
