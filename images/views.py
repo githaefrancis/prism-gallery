@@ -49,11 +49,18 @@ def search(request):
 
 
 def filter_by_location(request,location):
+  '''
+  Method to fetch
+  '''
+  locations_list=Location.get_all_locations()
+
   try:
     filter_results=Image.filter_by_location(location)
     context={
       "images":filter_results,
-      "location":filter_results[0].location
+      "location":location,
+      "location_list":locations_list,
+
     }
 
     return render(request,'location.html',context)
