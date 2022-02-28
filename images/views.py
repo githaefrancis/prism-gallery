@@ -25,22 +25,29 @@ def gallery(request):
 
 def search(request):
   if 'category_name' in request.GET and request.GET["category_name"]:
+
     locations_list=Location.get_all_locations()
     
-    search_term=request.GET.get("category_name")
+    try:
+
+      search_term=request.GET.get("category_name")
+      
+      search_results=Image.search_image(search_term)
+      message=f"results for {search_term}"
+      context={
+        "message":message,
+        "images":search_results,
+        "location_list":locations_list,
+        
+
+      }
+      print(search_results)
+
+      return render(request,'search.html',context)
     
-    search_results=Image.search_image(search_term)
-    message=f"results for {search_term}"
-    context={
-      "message":message,
-      "images":search_results,
-      "location_list":locations_list,
-      "location":search_results[0].location
+    except ValueError:
+      raise Http404()
 
-    }
-    print(search_results)
-
-    return render(request,'search.html',context)
 
 
   else:
@@ -67,5 +74,6 @@ def filter_by_location(request,location):
 
   except ValueError:
     raise Http404()
+    
  
 
