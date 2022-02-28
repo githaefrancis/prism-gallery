@@ -1,1 +1,1 @@
-web: gunicorn prism-gallery --log-file -
+web: gunicorn prism_gallery --log-file -
