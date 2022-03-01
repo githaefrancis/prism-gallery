@@ -90,3 +90,11 @@ opacity: 1;
   min-height: 70vh;
   
 }
+
+footer{
+  min-width:100vw;
+}
+.gallery-item img{
+
+  max-height: 20rem;
+}
