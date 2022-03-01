@@ -69,7 +69,6 @@ python3 manage.py runserver
 ```
 
 
-
 ## Livelink
 
 [Prism Gallery](https://prism-gallery.herokuapp.com/)
