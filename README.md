@@ -4,6 +4,15 @@
 
 A Django web application that displays photos. Photos can be filtered based on location and searched by category.
 
+## BDD 
+
+-User clicks on gallery button to view all images
+-User views images by location dropdown.
+-User searches for images by category.
+-User hovers over an image to expand it and show details.
+-User can click on copy button on the expanded pop up to copy image link
+
+
 ## Technologies and Tools
 
 - Django
