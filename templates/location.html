@@ -19,7 +19,7 @@
 <!-- data-masonry='{"percentPosition": true } -->
 <div class="row mb-3" data-masonry='{"percentPosition": true }'>
   {% for image in images %}
-  <div class="col-3 mb-3 gallery-item">
+  <div class="col-12 col-md-6 col-lg-3 mb-3 gallery-item d-flex justify-content-center">
     <div class="overlay"> <button class="view-image btn" data-bs-toggle="modal" data-bs-target="#image-{{image.id}}"> View</button> </div>
   <img src="{{ image.image.url }}" alt="" class="img-fluid">
   </div>
