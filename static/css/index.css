@@ -1,5 +1,8 @@
 
+html{
 
+  overflow-x: hidden;
+}
 nav{
   background-color:#FFCD30;
   font-weight: bold;
@@ -91,10 +94,11 @@ opacity: 1;
   
 }
 
-footer{
+/* footer{
   min-width:100vw;
-}
+} */
 .gallery-item img{
 
   max-height: 20rem;
 }
+
