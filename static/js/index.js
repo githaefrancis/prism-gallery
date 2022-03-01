@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
      let link= e.target.getAttribute('data');
     
-     baseUrl=window.location.origin;
+     baseUrl='prism-gallery.herokuapp.com'
     
      let fullLink=`${baseUrl}${link}`;
       navigator.clipboard.writeText(fullLink);
