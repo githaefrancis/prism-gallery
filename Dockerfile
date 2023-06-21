@@ -13,7 +13,7 @@ COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY ./entrypoint.sh .
-RUN sed -i 's/\r$//g' /usr/src/ofasnplugs/entrypoint.sh
+RUN sed -i 's/\r$//g' /usr/src/prism_gallery/entrypoint.sh
 RUN ["chmod", "+x", "/usr/src/prism_gallery/entrypoint.sh"]
 
 COPY . .
