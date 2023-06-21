@@ -3,7 +3,7 @@ version: "3.8"
 services:
   web:
     build: .
-    command: python3 manage.py 0.0.0.0:8004
+    command: gunicorn prism_gallery.wsgi:application --bind 0.0.0.0:8004 --workers 1
     volumes:
       - .:/usr/src/prism_gallery/
     ports:
@@ -20,5 +20,7 @@ services:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
       - POSTGRES_DB=${DB_NAME}
+    ports:
+      - 5433:5432
 volumes:
   postgres_data_prism:
