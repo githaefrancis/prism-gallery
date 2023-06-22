@@ -13,7 +13,7 @@ services:
     depends_on:
       - db_prism
     networks:
-      - network_prism
+      - network_word
   db_prism:
     image: postgres:13.0-alpine
     volumes:
@@ -28,5 +28,5 @@ volumes:
   postgres_data_prism:
 
 networks:
-  network_prism:
+  network_word:
     external: true
