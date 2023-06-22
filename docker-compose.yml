@@ -12,6 +12,8 @@ services:
       - ./.env
     depends_on:
       - db_prism
+    networks:
+      - network_prism
   db_prism:
     image: postgres:13.0-alpine
     volumes:
@@ -24,3 +26,7 @@ services:
       - 5433:5432
 volumes:
   postgres_data_prism:
+
+networks:
+  network_prism:
+    external: true
