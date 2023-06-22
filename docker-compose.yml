@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  web:
+  web_prism:
     build: .
     command: gunicorn prism_gallery.wsgi:application --bind 0.0.0.0:8004 --workers 1
     volumes:
@@ -11,8 +11,8 @@ services:
     env_file:
       - ./.env
     depends_on:
-      - db2
-  db2:
+      - db_prism
+  db_prism:
     image: postgres:13.0-alpine
     volumes:
       - postgres_data_prism:/var/lib/postgresql/data/
