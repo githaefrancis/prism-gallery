@@ -36,7 +36,7 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 MODE=config("MODE",default="dev")
 
 SECRET_KEY=config('SECRET_KEY')
-
+print(config)
 DEBUG=os.environ.get('DEBUG',False)
 
 # SECURITY WARNING: don't run with debug turned on in production!
