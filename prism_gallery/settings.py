@@ -38,7 +38,10 @@ MODE=config("MODE",default="dev")
 SECRET_KEY=config('SECRET_KEY')
 print(config)
 DEBUG=os.environ.get('DEBUG',False)
-
+print(config('DB_NAME'))
+print(config('DB_USER'))
+print(config('DB_PASSWORD'))
+print(config('DB_HOST'))
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
